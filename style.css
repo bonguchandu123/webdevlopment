@@ -1,0 +1,39 @@
+/* Define the custom cursor */
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red; /* Initial color of the cursor */
+    pointer-events: none; /* Prevents the cursor from blocking interactions */
+    transform: translate(-50%, -50%); /* Center the cursor */
+    transition: background 0.3s ease, transform 0.1s ease; /* Smooth transition for color change */
+}
+
+/* Change color on hover */
+.content:hover ~ .custom-cursor {
+    background: blue; /* Color when hovering over content */
+}
+
+/* Add a bit of animation */
+.custom-cursor-animation {
+    animation: cursorPulse 1s infinite;
+}
+
+@keyframes cursorPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
